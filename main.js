@@ -34,7 +34,7 @@ function init(){
 }
 
 function makeDeinTextAppear() {
-	testSound.play();
+	//testSound.play();
 	deinText.style.opacity = 1;
 	titelLabel.style.display = "block";	
 	titelLabelTimer = setTimeout(makeTitelLabelAppear, 3000);
