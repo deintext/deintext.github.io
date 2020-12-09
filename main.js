@@ -87,7 +87,7 @@ function wrongTitelOnce() {
 		firstWrongArp.stop();
 		introLoop.fade(0, 1, 1000);
 		introLoop.stop();
-	})
+	}, 5000)
 	titelInput.value = "";
 	shakeElement(titelInput);
 	titelLabel.innerHTML = "Finde einen <em>guten</em> Titel für deinen Text"
