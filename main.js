@@ -6,9 +6,7 @@
 	const titelInput = document.getElementById("titel-input");
 	const spamCont = document.getElementById("lass-mich-dir-helfen-container");
 
-	var sound = new Howl({
-		src: ['audio/sound2.mp3', 'audio/sound2.webm']
-	});
+
 
 	let deinTextTimer = 0;
 	let titelLabelTimer = 0;
