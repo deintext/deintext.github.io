@@ -8,7 +8,7 @@
 
 	var testSound = new Howl({
 		src: ['audio/test.wav'],
-		autoplay: false;
+		autoplay: false,
 		loop: true;
 	});
 
