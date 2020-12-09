@@ -10,14 +10,14 @@
 		src: ['audio/intro_pad_loop.wav'],
 		autoplay: false,
 		loop: true,
-		volume: 0;
+		volume: 0
 	});
 
 	var introPad = new Howl({
 		src: ['audio/intro_pad'.wav],
 		autplay: false,
 		loop: false,
-		volume: 0;
+		volume: 0
 	})
 
 
