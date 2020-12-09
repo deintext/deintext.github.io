@@ -6,7 +6,7 @@
 	const titelInput = document.getElementById("titel-input");
 	const spamCont = document.getElementById("lass-mich-dir-helfen-container");
 
-//sounds
+//audio
 	let introLoop = new Howl({
 		src: ['audio/intro_pad_loop.wav'],
 		autoplay: false,
@@ -24,7 +24,7 @@
 	let firstWrongArp = new Howl({
 		src: ['audio/first_wrong_arp.wav'],
 		autoplay: false,
-		loop: true,
+		loop: false,
 		volume: 0
 	});
 
@@ -84,7 +84,7 @@ function wrongTitelOnce() {
 		firstWrongArpLoop.play();
 		firstWrongArpLoop.fade(0, 1, 1000);
 		firstWrongArp.fade(1, 0, 1000);
-		first.stop();
+		firstWrongArp.stop();
 	})
 	titelInput.value = "";
 	shakeElement(titelInput);
