@@ -11,6 +11,11 @@
 		autoplay: false,
 		loop: true;
 	});*/
+	var sound = new Howl({
+	  src: ['audio/test.wav']
+	});
+
+	sound.play();
 
 	let deinTextTimer = 0;
 	let titelLabelTimer = 0;
