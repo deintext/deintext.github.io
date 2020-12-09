@@ -9,13 +9,15 @@
 	var introLoop = new Howl({
 		src: ['audio/intro_pad_loop.wav'],
 		autoplay: false,
-		loop: true
+		loop: true,
+		volume: 0;
 	});
 
 	var introPad = new Howl({
-		src: ['audio/intro_pad'],
+		src: ['audio/intro_pad'.wav],
 		autplay: false,
-		loop: false
+		loop: false,
+		volume: 0;
 	})
 
 
@@ -35,7 +37,9 @@
 function init(){
 	resetPage();
 	introPad.play();
+	introPad.fade(0, 1, 1000);
 	introLoop.play();
+	introLoop.fade(0, 1, 1000);
 	eingabeListenersHinzufügen(); // fügt einen Eventlistener hinzu, welcher die tastenpresses registriert (heißen keydown events)
 	deinTextTimer = setTimeout(makeDeinTextAppear, 1000);
 }
