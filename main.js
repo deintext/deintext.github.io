@@ -14,8 +14,8 @@
 
 	var introPad = new Howl({
 		src: ['audio/intro_pad'],
-		autplay: false;
-		loop: false;
+		autplay: false,
+		loop: false
 	})
 
 
