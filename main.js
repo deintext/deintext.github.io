@@ -7,7 +7,7 @@
 	const spamCont = document.getElementById("lass-mich-dir-helfen-container");
 
 //audio
-	/*let introLoop = new Howl({
+	let introLoop = new Howl({
 		src: ['audio/intro_pad_loop.wav'],
 		autoplay: false,
 		loop: true,
@@ -33,7 +33,7 @@
 		autoplay: false,
 		loop: true,
 		volume: 0
-	});*/
+	});
 
 
 	let deinTextTimer = 0;
@@ -57,10 +57,10 @@ function init(){
 }
 
 function makeDeinTextAppear() {
-	/*introPad.play();
+	introPad.play();
 	introPad.fade(0, 1, 1000);
 	introLoop.play();
-	introLoop.fade(0, 1, 1000);*/
+	introLoop.fade(0, 1, 1000);
 	deinText.style.opacity = 1;
 	titelLabel.style.display = "block";	
 	titelLabelTimer = setTimeout(makeTitelLabelAppear, 3000);
@@ -78,7 +78,7 @@ function makeTitelInputAppear() {
 }
 
 function wrongTitelOnce() {
-	/*firstWrongArp.play();
+	firstWrongArp.play();
 	firstWrongArp.fade(0, 1, 1000);
 	setTimeout(function(){
 		firstWrongArpLoop.play();
@@ -89,7 +89,7 @@ function wrongTitelOnce() {
 
 		introLoop.fade(0, 1, 1000);
 		introLoop.on('fade', function(){introLoop.stop();});
-	}, 5000)*/
+	}, 5000)
 	titelInput.value = "";
 	shakeElement(titelInput);
 	titelLabel.innerHTML = "Finde einen <em>guten</em> Titel für deinen Text"
