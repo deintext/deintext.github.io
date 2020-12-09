@@ -36,16 +36,16 @@
 
 function init(){
 	resetPage();
-	introPad.play();
-	introPad.fade(0, 1, 1000);
-	introLoop.play();
-	introLoop.fade(0, 1, 1000);
+
 	eingabeListenersHinzufügen(); // fügt einen Eventlistener hinzu, welcher die tastenpresses registriert (heißen keydown events)
 	deinTextTimer = setTimeout(makeDeinTextAppear, 1000);
 }
 
 function makeDeinTextAppear() {
-	//testSound.play();
+	introPad.play();
+	introPad.fade(0, 1, 1000);
+	introLoop.play();
+	introLoop.fade(0, 1, 1000);
 	deinText.style.opacity = 1;
 	titelLabel.style.display = "block";	
 	titelLabelTimer = setTimeout(makeTitelLabelAppear, 3000);
