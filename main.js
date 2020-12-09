@@ -11,11 +11,12 @@
 		autoplay: false,
 		loop: true;
 	});*/
-	var sound = new Howl({
-	  src: ['audio/test.wav']
+	var testSound = new Howl({
+		src: ['audio/test.wav'],
+		autoplay: false,
+		loop: true
 	});
 
-	sound.play();
 
 	let deinTextTimer = 0;
 	let titelLabelTimer = 0;
