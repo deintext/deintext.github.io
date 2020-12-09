@@ -6,7 +6,11 @@
 	const titelInput = document.getElementById("titel-input");
 	const spamCont = document.getElementById("lass-mich-dir-helfen-container");
 
-
+	var testSound = new Howl({
+		src: ['audio/test.wav'],
+		autoplay: false;
+		loop: true;
+	});
 
 	let deinTextTimer = 0;
 	let titelLabelTimer = 0;
@@ -30,6 +34,7 @@ function init(){
 }
 
 function makeDeinTextAppear() {
+	testSound.play();
 	deinText.style.opacity = 1;
 	titelLabel.style.display = "block";	
 	titelLabelTimer = setTimeout(makeTitelLabelAppear, 3000);
