@@ -59,6 +59,7 @@ function wrongTitelTwice() {
 }
 
 function wrongTitelThrice() {
+	wrongTitelCounter++;
 	setTimeout (function(){
 		titelLabel.style.opacity = 0;
 		setTimeout (function(){
@@ -66,18 +67,20 @@ function wrongTitelThrice() {
 			titelLabel.innerHTML = "Na gut";
 			setTimeout(function(){
 				titelInput.value = "";
-				let titelInputCurrent  = "";
-				let letterCounter = 0;
-				const titelFinal = "LASS MICH DIR HELFEN";
-				let titelInterval = setInterval(function(){
-					titelInputCurrent += titelFinal[letterCounter];
-					letterCounter++;
-					titelInput.value = titelInputCurrent;
-					if(letterCounter >= titelFinal.length) {
-						clearInterval(titelInterval);
-						fillScreenWithText();
-					}
-				}, 500); //nach debugging auf 500
+				setTimeout(function(){
+					let titelInputCurrent  = "";
+					let letterCounter = 0;
+					const titelFinal = "LASS MICH DIR HELFEN";
+					let titelInterval = setInterval(function(){
+						titelInputCurrent += titelFinal[letterCounter];
+						letterCounter++;
+						titelInput.value = titelInputCurrent;
+						if(letterCounter >= titelFinal.length) {
+							clearInterval(titelInterval);
+							fillScreenWithText();
+						}
+					}, 500); //nach debugging auf 500
+				}, 1000);				
 			}, 1500); // nach debugging auf 1500
 		}, 3000); // nach debugging auf 3000
 	}, 2000); // nach debugging auf 2000
@@ -87,12 +90,16 @@ function fillScreenWithText() {
 	setTimeout(function(){
 		spamCont.style.display = "block";
 
+		
+		spamCont.innerHTML += "<span style=\"top:" + (Math.random()*20)+20 +"%; left:" + (Math.random()*20)+20 +"%; font-size:40px; font-family:\'Oswald\'\">LASS MICH DIR HELFEN</span>";
+		
 		let screenCleared = false;
 		let intervalAmount = 500; //nach debugging auf 500 setzen
 		let spamCounter = 0;
 		waitBeforeAddingNextSpan(spamCounter, intervalAmount, screenCleared);
 
-	}, 2000); // nach debugging auf 2000 setzen
+
+	}, 2500); // nach debugging auf 2000 setzen
 }
 
 function addSpanToSpamCont(){
@@ -101,10 +108,10 @@ function addSpanToSpamCont(){
 
 function waitBeforeAddingNextSpan(spamCounter, intervalAmount, screenCleared){ // ACHTUNG ACHTUNG REKURSIV
 	if (spamCounter <= 150){
-		spamCounter++;
-		intervalAmount *= 0.94;
-		addSpanToSpamCont();
 		setTimeout(function(){
+			spamCounter++;
+			intervalAmount *= 0.94;
+			addSpanToSpamCont();
 			waitBeforeAddingNextSpan(spamCounter, intervalAmount, screenCleared);
 		}, intervalAmount);
 	} else if (screenCleared === false){
@@ -127,7 +134,11 @@ function setupWritingPhase() {
 	setTimeout(function() {
 		textTitel.style.opacity = 1;
 		textLabel.style.display = "block";
+		document.body.style.transition = "background-color 1s ease";
+		textTitel.style.transition = "color 1s ease";
 		setTimeout(function(){
+			document.body.style.backgroundColor = "white";
+			textTitel.style.color = "black";
 			textLabel.style.top = "30px";
 			textLabel.style.opacity = 1;
 			textfeld.style.display = "block";
@@ -161,7 +172,7 @@ function shakeElement(element) { // WARNING: Sets position to relative in order 
 
 
 function titelConfirm(event) {
-	if (event.keyCode===13){
+	if (event.keyCode===13 && titelInput.value != ""){
 		switch (wrongTitelCounter){
 			case 0:
 				wrongTitelOnce();

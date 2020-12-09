@@ -244,7 +244,7 @@ body {
   position: relative;
   font-family: "Oswald", sans-serif;
   font-size: 30px;
-  color: white;/*hsl(313, 10%, 60%);*/
+  color: black;/*hsl(313, 10%, 60%);*/
   opacity: 0;
   transition: opacity .5s ease-in;
   display: none;
