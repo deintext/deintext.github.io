@@ -83,10 +83,12 @@ function wrongTitelOnce() {
 	setTimeout(function(){
 		firstWrongArpLoop.play();
 		firstWrongArpLoop.fade(0, 1, 1000);
+
 		firstWrongArp.fade(1, 0, 1000);
-		firstWrongArp.stop();
+		firstWrongArp.on('fade', function(){firstWrongArp.stop();});
+
 		introLoop.fade(0, 1, 1000);
-		introLoop.stop();
+		introLoop.on('fade', function(){introLoop.stop();});
 	}, 5000)
 	titelInput.value = "";
 	shakeElement(titelInput);
