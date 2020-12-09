@@ -6,16 +6,17 @@
 	const titelInput = document.getElementById("titel-input");
 	const spamCont = document.getElementById("lass-mich-dir-helfen-container");
 
-/*	var testSound = new Howl({
-		src: ['audio/test.wav'],
-		autoplay: false,
-		loop: true;
-	});*/
-	var testSound = new Howl({
-		src: ['audio/test.wav'],
+	var introLoop = new Howl({
+		src: ['audio/intro_pad_loop.wav'],
 		autoplay: false,
 		loop: true
 	});
+
+	var introPad = new Howl({
+		src: ['audio/intro_pad'],
+		autplay: false;
+		loop: false;
+	})
 
 
 	let deinTextTimer = 0;
@@ -33,7 +34,8 @@
 
 function init(){
 	resetPage();
-	testSound.play();
+	introPad.play();
+	introLoop.play();
 	eingabeListenersHinzufügen(); // fügt einen Eventlistener hinzu, welcher die tastenpresses registriert (heißen keydown events)
 	deinTextTimer = setTimeout(makeDeinTextAppear, 1000);
 }
