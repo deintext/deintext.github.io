@@ -88,7 +88,7 @@ function fillScreenWithText() {
 		spamCont.style.display = "block";
 
 		let screenCleared = false;
-		let intervalAmount = 100; //nach debugging auf 500 setzen
+		let intervalAmount = 500; //nach debugging auf 500 setzen
 		let spamCounter = 0;
 		waitBeforeAddingNextSpan(spamCounter, intervalAmount, screenCleared);
 
