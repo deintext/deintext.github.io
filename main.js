@@ -6,19 +6,34 @@
 	const titelInput = document.getElementById("titel-input");
 	const spamCont = document.getElementById("lass-mich-dir-helfen-container");
 
-	var introLoop = new Howl({
+//sounds
+	let introLoop = new Howl({
 		src: ['audio/intro_pad_loop.wav'],
 		autoplay: false,
 		loop: true,
 		volume: 0
 	});
 
-	var introPad = new Howl({
+	let introPad = new Howl({
 		src: ['audio/intro_pad'.wav],
 		autplay: false,
 		loop: false,
 		volume: 0
 	})
+
+	let firstWrongArp = new Howl({
+		src: ['audio/first_wrong_arp.wav'],
+		autoplay: false,
+		loop: true,
+		volume: 0
+	});
+
+	let firstWrongArpLoop = new Howl({
+		src: ['audio/first_wrong_arp_loop.wav'],
+		autoplay: false,
+		loop: true,
+		volume: 0
+	});
 
 
 	let deinTextTimer = 0;
@@ -63,6 +78,14 @@ function makeTitelInputAppear() {
 }
 
 function wrongTitelOnce() {
+	firstWrongArp.play();
+	firstWrongArp.fade(0, 1, 1000);
+	setTimeout(function(){
+		firstWrongArpLoop.play();
+		firstWrongArpLoop.fade(0, 1, 1000);
+		firstWrongArp.fade(1, 0, 1000);
+		first.stop();
+	})
 	titelInput.value = "";
 	shakeElement(titelInput);
 	titelLabel.innerHTML = "Finde einen <em>guten</em> Titel für deinen Text"
