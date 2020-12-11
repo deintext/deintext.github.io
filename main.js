@@ -16,7 +16,7 @@
 	});
 
 	let introRiser = new Howl({
-		src: ['audio/intro_riser.wav'],
+		src: ['audio/intro_riser_alt.wav'],
 		autplay: false,
 		loop: false,
 		volume: 1
