@@ -61,7 +61,7 @@ function init(){
 	resetPage();
 	introTest.play();
 	eingabeListenersHinzufügen(); // fügt einen Eventlistener hinzu, welcher die tastenpresses registriert (heißen keydown events)
-	deinTextTimer = setTimeout(makeDeinTextAppear, 1000);
+	deinTextTimer = setTimeout(makeDeinTextAppear, 2000);
 }
 
 function makeDeinTextAppear() {
