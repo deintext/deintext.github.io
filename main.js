@@ -8,7 +8,7 @@
 
 //audio
 //maybe wie bei chat faker gold anfang sounds?
-	/*let introLoop = new Howl({
+	let introLoop = new Howl({
 		src: ['audio/intro_pad_loop.wav'],
 		autoplay: false,
 		loop: true,
@@ -19,7 +19,7 @@
 		src: ['audio/intro_pad'.wav],
 		autplay: false,
 		loop: false,
-		volume: 0
+		volume: 1
 	})
 
 	let firstWrongArp = new Howl({
@@ -34,7 +34,7 @@
 		autoplay: false,
 		loop: true,
 		volume: 0
-	});*/
+	});
 
 	let introTest = new Howl({
 		src: ['audio/intro_test.wav'],
@@ -59,16 +59,15 @@
 
 function init(){
 	resetPage();
-	introTest.play();
 	eingabeListenersHinzufügen(); // fügt einen Eventlistener hinzu, welcher die tastenpresses registriert (heißen keydown events)
 	deinTextTimer = setTimeout(makeDeinTextAppear, 2000);
 }
 
 function makeDeinTextAppear() {
-	/*introPad.play();
+	introPad.play();
 	introPad.fade(0, 1, 1000);
 	introLoop.play();
-	introLoop.fade(0, 1, 1000);*/
+	introLoop.fade(0, 1, 1000);
 	deinText.style.opacity = 1;
 	titelLabel.style.display = "block";	
 	titelLabelTimer = setTimeout(makeTitelLabelAppear, 3000);
