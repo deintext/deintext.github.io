@@ -7,6 +7,7 @@
 	const spamCont = document.getElementById("lass-mich-dir-helfen-container");
 
 //audio
+//maybe wie bei chat faker gold anfang sounds?
 	let introLoop = new Howl({
 		src: ['audio/intro_pad_loop.wav'],
 		autoplay: false,
@@ -89,7 +90,7 @@ function wrongTitelOnce() {
 
 		introLoop.fade(0, 1, 1000);
 		introLoop.on('fade', function(){introLoop.stop();});
-	}, 5000)
+	}, 5000);
 	titelInput.value = "";
 	shakeElement(titelInput);
 	titelLabel.innerHTML = "Finde einen <em>guten</em> Titel für deinen Text"
