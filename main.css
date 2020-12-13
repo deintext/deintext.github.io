@@ -176,8 +176,32 @@ body {
 	/*background-image: radial-gradient(circle at 20% 30%,  hsl(193, 3%, 50%), hsl(193, 3%, 39%)); */
 }
 
-#dein-text {
-	color: black ;
+#loading-bar-cont {
+  border: black 2px solid;
+  position: absolute; 
+  left: 0; 
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  margin-top: 50px;
+  width: 100px;
+  height: 20px;
+  transition: opacity 1s ease;
+}
+
+#loading-bar {
+  box-sizing: border-box;
+  border: 2px white solid;
+  background-color: black;
+  position: absolute;
+  left: 0;
+  width: 0%;
+  height: 100%;
+}
+
+#dein-text-heading {
+	color: black;
 	font-family: "Oswald", sans-serif;
 	text-align: center;
   font-size: 100px;
@@ -185,7 +209,7 @@ body {
   transition: opacity 3s ease;
 }
 
-#titel-label {
+#title-label {
   font-family: "Oswald", sans-serif;
   font-size: 30px;
   color: black;/*hsl(313, 10%, 60%);*/
@@ -196,7 +220,7 @@ body {
   margin-top: 100px;
 }
 
-#titel-input {
+#title-input {
   position: relative;
   left: auto;
   right: auto;
@@ -226,7 +250,7 @@ body {
   font-family: "Oswald", sans-serif;
 }
 
-#text-titel {
+#text-title {
   color: white;
   font-family: "Oswald", sans-serif;
   text-align: center;
