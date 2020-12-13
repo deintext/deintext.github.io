@@ -50,8 +50,8 @@ class InteractiveText {
 	}
 
 	loadSounds = () => {
-		this.loadSoundFile("audio/intro_arp_loop.wav", false, true, 1);
 		this.loadSoundFile("audio/intro_riser_alt.wav", false, false, 1);
+		this.loadSoundFile("audio/intro_arp_loop.wav", false, true, 1);
 		this.loadSoundFile("audio/first_wrong_arp.wav", false, false, 0);
 		this.loadSoundFile("audio/first_wrong_arp_loop.wav", false, true, 0);
 	}
@@ -82,7 +82,7 @@ class InteractiveText {
 			setTimeout( () => {
 				this.loadingBarCont.parentNode.removeChild(this.loadingBarCont);
 			}, 1000);
-		this.makeDeinTextAppear();
+			this.makeDeinTextAppear();
 		} else {
 			const loadPercent = (this.soundsLoadedCounter / this.soundsToLoadCounter) * 100;
 			this.loadingBar.style.width = loadPercent + "%";
@@ -91,9 +91,11 @@ class InteractiveText {
 
 	makeDeinTextAppear = () => {
 		this.sounds[0].play();
-		this.deinTextHeading.style.opacity = 1;
-		this.titleLabel.style.display = "block";	
-		setTimeout(this.maketitleLabelAppear, 3000);
+		setTimeout( () => {
+			this.deinTextHeading.style.opacity = 1;
+			this.titleLabel.style.display = "block";	
+			setTimeout(this.maketitleLabelAppear, 3000);
+			}, 2000);
 	}
 
 	maketitleLabelAppear = () => {
