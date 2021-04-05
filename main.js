@@ -1,12 +1,16 @@
-// NITAY FEIGENBAUM, DECEMBER 2020
-// GO GO SPAGHETTI CODE!!!
+// NITAY FEIGENBAUM, APRIL 2021
+// GO GO SPAGHETTI CODE
 
-//TODO: SOUNDDESIGN!!!!
-// maybe little doots? like in the beginning of decas first light
+/*TODO: SOUNDDESIGN!!!!
+
+maybe little doots? like in the beginning of decas first light
 
 
-//class containing basically everything
 
+*/
+
+
+//class containing basically everything. This is probably bad design, refactor later
 class InteractiveText {
 
     constructor(container_id) {
@@ -46,7 +50,42 @@ class InteractiveText {
     }
 
     loadActualText = () => {
-        this.actualText = "Du hast keine Kontrolle hier, sagt ihr Lächeln, sagt ihr Grinsen zwischen den Sommersprossengrübchen, sagt ihr Griff um dein Handgelenk.\nDu hast keine Kontrolle, während der Bass wummert, die Schlange vor dem Klo länger und länger wird und dein Mantel halb von deiner Schulter herabhängt."; // der Text, der am Ende dastehen soll
+        this.actualText =
+            `Du hast hier die Kontrolle.
+Du. Niemand sonst. Du bist der Big Boss. Du sagst, es werde Licht, und tada:
+Licht.
+Das soll ich direkt am Anfang erwähnen. So stehts in meinen Anweisungen: Hier, Moment, Anweisungen, Anweisungen, Anweisungen, da, Anweisungen.
+1) Das Subjekt davon überzeugen, dass es die Kontrolle hat.
+Wenn du also kurz angeben könntest - sagen wir auf einer Skala von ausreichend bis fanatisch - wie überzeugt du bist? Das ist wichtig für meine Service-Evaluation. Zur Inspiration kann ich dir einen der folgenden Sätze vorlesen: Dies hier ist dein Text. Alle Entscheidungen, die ab jetzt getroffen werden, gehören dir ganz allein. Lass dir ja nichts von irgendwem einreden. 
+Wow! Da bin ja sogar ich überzeugt. Du triffst so oft Leute, die versuchen, dir etwas einzureden, oder? Regierungsbeauftragte und Verkehrsbeamte, Werbeplakate und Litfaßsäulen, ich sags dir: Die graue Eminenz lauert an jeder Bushaltestelle. Aber ab heute lassen wir uns nicht mehr herumschubsen. Ab heute sagen wir zu denen da oben: Nein, nein. Oder alternativ etwas rhetorisch Hochwertigeres, wenn dir da etwas einfällt.
+Überzeugt? Schön, dann hake ich das mal ab. Ciao, Schritt 1, guten Morgen, Schritt 2. Mal sehen.
+2) Dem Subjekt den Versuchsaufbau erklären.
+Versuchsaufbau, naja. Könnten wir natürlich machen, wenn wir uns an die Regeln halten wollen. Aber unter uns, wenn du mich fragst, klingt das nach langweiligem Wissenschaftsgefasel. Kleingedruckte Zitate in Fußnoten und angeheftete Sicherheitsbrillen und Geheimhaltungsprotokolle.
+Wie wärs stattdessen mit einer Geschichte? Vor langer, langer Zeit, war in meiner Grundschulklasse ein Mädchen, ein ganz gewöhnliches, nettes Mädchen. Hat gern Basketball gespielt, konnte gut singen, und auch sonst keine Anzeichen von Serienkiller. Nur im Sommer hat sie im Unterricht gern Fliegen gefangen und ihnen unterm Tisch mit einer Pinzette die Flügel ausgerissen. Nur um zu sehen, was passiert, sonst nichts. Das war ihr Ding, und da hat sich nicht von abbringen lassen. Selbst, als Frau Ebersberger die Sammlung halbtoter Fliegen ohne Flügel in ihrem Schulranzen entdeckte und die Schultherapeutin ihr erklärte, dass das den Fliegen ganz dolle wehtat. Sie hat einfach weitergemacht. Sie war neugierig, und sie wollte wissen, wo Fliegen ohne ihre Flügel enden.
+Glaubst du an Gott? Komische Frage, tut mir Leid, tut mir Leid. Aber manchmal denke ich – nicht lachen jetzt - die Erde ist nichts weiter als ein Drittklass-Bastelprojekt, ein rundes Gesteinsorigami ohne wirkliches Ziel. Gott wollte einfach mal gucken, was Menschen so machen, wenn man sie auf einem Planeten allein lässt. Und deswegen auch das mit dem Leid und dem freiem Willen und dem Nicht-Eingreifen trotz allmächtiger Barmherzigkeit, ne, Gott fand es einfach spannend, zu sehen, wie wir allein zurechtkommen. Bis das irgendwann langweilig wurde, und Gott sich stattdessen Weltraum-Videospiele entdeckte. Und während wir hier sehnlich auf die Wiederkunft einer Schöpferfigur warten, sitzt Gott mittlerweile in der Uni und studiert Hyper-BWL, hat uns komplett vergessen, und die Erde steht aus sentimentalen Gründen irgendwo verstaubt auf dem Dachboden von Gotts Eltern.
+An der HU Berlin gab es vor ein paar Jahren diese Reihe von Experimenten, um herauszufinden, ob Haustiere gern verstecken spielen. Einer Gruppe Ratten wurden Elektroden in den Kopf getackert. Nach ein paar Tagen im Gehege wurden die Ratten dann allesamt der Länge nach aufgeschnitten, um ihre Gehirnareale in Einzelteile zu zerlegen. Ergebnisse wurden analysiert, Hypothesen bestätigt, Peer-Reviews eingeholt. Es gab Dankesreden und Veröffentlichungen in Wissenschaftsmagazinen. Keine Krebs-Heilung, keine erneuerbaren Solarzellen, keine Marskolonie. Ein paar Leute mit Doktortiteln wollten sehen, ob ihr Wauwau sich absichtlich hinterm Sofa verkriecht.
+Ich weiß, was du jetzt denkst. Was ist mit der Ratte? Der Ratte bringen all diese wissenschaftlichen Erkenntnisse ja gar nichts. Der Ratte ist es scheißegal, ob Haustiere sich gern verstecken. Die Ratte ist dann nämlich tot.
+Warum fragt niemand die Ratte um Erlaubnis? 
+Wir nutzen die Ratte aus. Wir belügen und betrügen sie für unsere Tests. Die Ratte darf nichts von dem Experiment ahnen, sonst sind die Ergebnisse verfälscht. Sie muss alles, was sie tut, freiwillig tun. Sie muss überzeugt sein, ihre eigenen Entscheidungen zu treffen.
+Das passt jetzt vielleicht nicht ganz und führt sowieso alles ein wenig weg von unserem Versuchsaufbau, tut mir Leid. Ich soll dir das eigentlich nicht verraten, aber du bist hier nicht die Ratte. Unsere Ratte heißt Bob, und Bob stirbt am Ende.
+Ja, und zwar deinetwegen.
+Ups, Spoiler Alarm. Tut mir nochmal Leid.
+Warum erzähle ich dir das alles? Du kennst Bob noch nicht einmal, und jetzt musst du schon mit deinem Gewissen vereinbaren, Bob umgebracht zu haben.
+Hier kommt der Twist: Du kannst Bob retten. Du kannst beweisen, dass du besser bist als all die flügelausreißenden, gehirnsezierenden Monster da draußen. Alles, was du tun musst, ist jetzt aufzuhören, diesen Text zu schreiben, jetzt, in diesem Moment. Du ziehst die Reißleine, und wird es Bob niemals geben.
+Was uns zu Schritt 3 führt.
+3) Dem Subjekt die Verantwortung übergeben.
+Da hast dus. Das hier ist deine letzte Warnung. Wir hatten unseren Spaß, unsere kleinen Spielchen. Alles, was ab jetzt passiert, passiert auf deinetwegen.
+Du hast hier die Kontrolle.
+
+Bob hatte einen neuen Lieblingswitz. Im Bus nach Hause hatte er gehört wie ein Teenager ihn seinen Freunden erzählte, direkt im Vierersitz am Eingang. Bob war eine Station länger sitzengeblieben, um die Pointe zu hören, und als sie kam, musste er sich den Mund mit beiden Händen zuhalten, um nicht hysterisch loszukreischen. Die Frau auf dem Sitz neben ihm hatte die Nase gerümpft und war aufgestanden, um auszusteigen. Bob war eine weitere Haltestelle sitzengeblieben, um ja nicht denselben Heimweg wie die Frau zu haben.
+Die Abkürzung durch den Park und danach über die Brücke zurück auf die Straße. Während Bob durch an Einfamilienreihenhäusern entlanglief, wiederholte er den Witz immer wieder in seinem Kopf. Die Leute auf dem Bürgersteig drehten sich nach ihm um, auch wenn er versuchte, möglichst leise in seinen Schal hineinkicherte. Er konnte es kaum erwarten, den Witz morgen im Büro zu erzählen.
+Zuhause angekommen hängte er Jacke, Schal und Aktenkoffer an den Haken, fand Rudi in der Küche, füllte den Fressnapf und zwang sich, erst abzuwarten, bis der Hund aufgegessen hatte. Mit der Ferse trippelnd stand Bob da und sah Rudi beim Aufschlecken der Schüssel zu. Mit jedem Biss drohte der Witz aus ihm herauszuplatzen. Als der Napf fast leer war, konnte er es nicht mehr aushalten. Bereits beim zweiten Satz musste Bob so heftig lachen, dass er kein Wort mehr hervorbrachte. Aus den Augenwinkeln sah ihn Rudi an, die Schnauze immer noch im Schälchen versenkt, der Schwanz hin- und herwedelnd wie ein Scheibenwischer. Bob stand da und krümmte sich vor Lachen, der Kopf hochrot, die Augen feucht mit Tränen. Nach Atem ringend kämpfte er sich bis zum letzten Satz durch, und ließ sich dann auf den Küchenstuhl plumpsen.
+Rudi hechelte ihm entgegen, sprang an seinem Bein hoch und schleckte ihm übers Gesicht. Bob schob ihn weg, wischte sich mit dem Ärmel über die Backen, spürte die letzte glucksenden Nachbeben langsam im Brustkorb verebben. Seine Grübchen taten weh. So einen guten Witz hatte er schon lang nicht mehr gehört. Die Leute im Büro morgen würden wahnsinnig werden. Sie würden vom Stuhl fallen und sich auf dem Boden kugeln und Bob würde ihn nochmal erzählen und nochmal, ab morgen jede Mittagspause, und in der Kaffeeküche und am Wasserspender, die Leute würden sich um ihn versammeln, bitte erzähl den Witz nochmal, Bob, noch einmal, bitte, und sie würden ihn alle angucken, erwartungsvolle Gesichter, glänzende Äuglein, und niemand würde ihn mehr unterbrechen und an seinem nächsten Geburtstag würden sie ihm eine Kaffeetasse „bester Witzerzähler #1“ schenken und auf einem Stuhl durchs Büro tragen.
+Bob stemmte sich vom Stuhl auf, nahm einen Schluck Wasser, einem abenteuerlichen Impuls nachgehend direkt aus dem Wasserhahn, und begann dann erneut, Rudi den Witz zu erzählen. Diesmal schaffte er es fast bis zur Hälfte, bevor der Lachanfall ihn zurück in den Stuhl zwang. Rudi sah ihn aus feuchten Hundeaugen an, kratzte sich mit einer Pfote am Ohr. Der Hund war ein hartes Publikum, aber auch ihn würde Bob zum Lachen bringen. Er setzte neu an, schaffte es fast bis zum Ende, setzte neu an, stand auf, schmierte sich ein Mayonnaise-Sandwich, setzte neu an, die Kolleg*innen in ihrer Mittagspause mit ihren Chai-Latte-Smoothies klatschten, jubelten, luden ihn auf einen Kaffee ein, er setzte neu an. Nach jeder erfolgreichen Pointe kamen mehr Leute an den Tisch, das gesamte Büro rief seinen Namen, nochmal, Bob, nochmal! Michael Kalmers trug ihn Huckepack durch die Cafeteria, nochmal, Birgit Samse schüttelte ihm kopfnickend die Hand, das haben Sie gut gemacht, Bob, ich bin stolz auf Sie, Frau Peters trat aus ihrem Büro und hängte ihm einen Weihnachtskranz um den Hals. Bob grinste, lächelte in die Kameras, winkte der Gehaltserhöhung zu. Er änderte hier und da ein Wort, fügte Kunstpausen hinzu, ließ die Leute zappeln, mehr, Bob, mehr, verstellte Stimme, Krawatte und Verkleidung, Akrobatiknummer mit Überraschungsgästen und anschließendem Interview. Die unterhaltsamste Show, die die Industrie jemals erlebt hatte. Leute aus allen möglichen Tochterfirmen kamen von nah und fern, um den Maestro live mitzuerleben. Ein Ereignis, von dem man noch seinen Enkelkindern erzählen würde. Jeder Moment ein Meisterwerk. Man hätte ihn einrahmen und auf Benefizgalen versteigern können. Bob kannte jede Woge der Sprache. Mit jeder Ebbe, mit jeder Flut wankten die Menschen um ihn herum, konnten kaum noch stehen, fielen übereinander, die Welt zerschmolz, die Decke brach auf, und inmitten all dessen tanzte Großmeister Bob durch die Massen, grazil wie ein Eiskunstläufer, charmant wie ein Eiskunstläufer, eloquent wie ein Eiskunstläufer.
+
+Unter Rudis strengem Blick übte er die Kunst des Witzes bis spät in den Abend hinein. Um Acht ging er erschöpft Zähne putzen und ließ sich ins Bett fallen.
+Am nächsten Morgen erwachte Bob drei Minuten vor dem Weckerklingeln. Er gratulierte sich selbst und nahm sich vor, morgen vier Minuten zu schaffen, jeden Tag ein bisschen besser. Beim Frühstück setzte er die Müslitüte auf den Stuhl gegenüber und die Milchpackung ans Tischende. Er hatte ein wenig Lampenfieber, den Witz vor einem anderen Publikum als Rudi zu erzählen, aber bereits nach den ersten paar Sätzen knickte die Müslitüte um, die Milchpackung wackelte leicht mit, Rudi bellte zufrieden den Tisch an. Und Bob hob ab. Nächste Station: Cafeteria.
+Er nahm Jacke, Schal und Aktenkoffer von der Kommode, winkte Rudi zum Abschied zu, trat aus der Haustür auf die Straße und wurde von einem LKW überfahren.`
         this.textLoaded = true;
     }
 
@@ -90,7 +129,7 @@ class InteractiveText {
 
             const credits = document.createElement('p');
             credits.classList.add('credits');
-            credits.textContent = 'SOUND, TEXT & PROGRAMMING';
+            credits.textContent = 'Text, Sound & Programming';
 
             const creditsName = document.createElement('p');
             creditsName.classList.add('credits');
