@@ -306,7 +306,6 @@ body {
 }
 
 #text-title {
-    color: white;
     font-family: "Oswald", sans-serif;
     text-align: center;
     font-size: 100px;
@@ -323,7 +322,6 @@ body {
     position: relative;
     font-family: "Oswald", sans-serif;
     font-size: 30px;
-    color: black;
     /*hsl(313, 10%, 60%);*/
     opacity: 0;
     transition: opacity .5s ease-in;
@@ -331,13 +329,22 @@ body {
     text-align: center;
 }
 
-textarea {
-    opacity: 0;
+#input-wrapper {
     transition: opacity .5s ease-in;
     position: relative;
     box-sizing: border-box;
     width: 90%;
     margin: 0 auto;
+}
+
+textarea {
+    opacity: 0;
+    transition: opacity .5s ease-in;
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+    background-color: transparent;
+    font-family: "Oswald", sans-serif;
 }
 
 .spam-container {
@@ -366,4 +373,23 @@ textarea {
 
 #credits-name {
     font-size: 40px;
+}
+
+#content-note {
+    font-family: "Oswald", sans-serif;
+    font-size: 20px;
+    position: relative;
+    top: 30px;
+    opacity: 0;
+    display: none;
+    transition: opacity 3s ease;
+}
+
+.content-note-item {
+    opacity: 0;
+    transition: opacity 3s ease;
+}
+
+.light-change-text {
+    color: white;
 }

@@ -47,6 +47,7 @@ class InteractiveText {
         this.loadSounds();
         //introRiser.play();
         this.addInputListener(); // adds listener waiting for keypresses in the textarea element
+        this.addFocusListener();
     }
 
     loadActualText = () => {
@@ -56,7 +57,7 @@ Du. Niemand sonst. Du bist der Big Boss. Du sagst, es werde Licht, und tada:
 Licht.
 Das soll ich direkt am Anfang erwähnen. So stehts in meinen Anweisungen: Hier, Moment, Anweisungen, Anweisungen, Anweisungen, da, Anweisungen.
 1) Das Subjekt davon überzeugen, dass es die Kontrolle hat.
-Wenn du also kurz angeben könntest - sagen wir auf einer Skala von ausreichend bis fanatisch - wie überzeugt du bist? Das ist wichtig für meine Service-Evaluation. Zur Inspiration kann ich dir einen der folgenden Sätze vorlesen: Dies hier ist dein Text. Alle Entscheidungen, die ab jetzt getroffen werden, gehören dir ganz allein. Lass dir ja nichts von irgendwem einreden. 
+Wenn du also kurz angeben könntest - sagen wir auf einer Skala von ausreichend bis fanatisch - wie überzeugt du bist? Das ist wichtig für meine Angestellten-Evaluation. Zur Inspiration kann ich dir einen der folgenden Sätze vorlesen: Dies hier ist dein Text. Alle Entscheidungen, die ab jetzt getroffen werden, gehören dir ganz allein. Lass dir ja nichts von irgendwem einreden. 
 Wow! Da bin ja sogar ich überzeugt. Du triffst so oft Leute, die versuchen, dir etwas einzureden, oder? Regierungsbeauftragte und Verkehrsbeamte, Werbeplakate und Litfaßsäulen, ich sags dir: Die graue Eminenz lauert an jeder Bushaltestelle. Aber ab heute lassen wir uns nicht mehr herumschubsen. Ab heute sagen wir zu denen da oben: Nein, nein. Oder alternativ etwas rhetorisch Hochwertigeres, wenn dir da etwas einfällt.
 Überzeugt? Schön, dann hake ich das mal ab. Ciao, Schritt 1, guten Morgen, Schritt 2. Mal sehen.
 2) Dem Subjekt den Versuchsaufbau erklären.
@@ -94,6 +95,23 @@ Er nahm Jacke, Schal und Aktenkoffer von der Kommode, winkte Rudi zum Abschied z
         this.loadSoundFile("audio/intro_arp_loop.wav", false, true, 1);
         this.loadSoundFile("audio/first_wrong_arp.wav", false, false, 0);
         this.loadSoundFile("audio/first_wrong_arp_loop.wav", false, true, 0);
+
+        this.loadSoundFile("audio/static1.wav", false, false, 1);
+        this.loadSoundFile("audio/static1_loop.wav", false, true, 0);
+        this.loadSoundFile("audio/static2.wav", false, false, 1);
+        this.loadSoundFile("audio/static2_loop.wav", false, true, 0);
+        this.loadSoundFile("audio/static_ramp.wav", false, false, 1);
+
+        this.loadSoundFile("audio/horror_riser.wav", false, false, 0);
+
+        // this.loadSoundFile("audio/industry_loop_1.wav", false, true, 0);
+        // this.loadSoundFile("audio/industry_loop_2.wav", false, true, 0);
+
+        
+
+        for (let i = 1; i <= 20; i++) {
+            this.loadSoundFile("audio/typewriter/tw" + i +".wav", false, false, 1); 
+        }
     }
 
     loadSoundFile = (soundURL, autoplayEnabled, isLoop, vol) => {
@@ -149,8 +167,6 @@ Er nahm Jacke, Schal und Aktenkoffer von der Kommode, winkte Rudi zum Abschied z
             credits[i].style.opacity = 0;
         }
 
-
-
         this.loadingBarCont.removeEventListener("click", this.makeDeinTextAppear);
         this.loadingBarCont.style.opacity = 0;
         setTimeout(() => {
@@ -166,7 +182,7 @@ Er nahm Jacke, Schal und Aktenkoffer von der Kommode, winkte Rudi zum Abschied z
             this.deinTextHeading.style.opacity = 1;
             this.titleLabel.style.display = "block";
             setTimeout(this.maketitleLabelAppear, 3000);
-        }, 2000);
+        }, 2300);
     }
 
     maketitleLabelAppear = () => {
@@ -181,6 +197,9 @@ Er nahm Jacke, Schal und Aktenkoffer von der Kommode, winkte Rudi zum Abschied z
     }
 
     wrongtitleOnce = () => {
+        this.sounds[4].play();
+        this.sounds[5].play();
+        this.sounds[5].fade(0, 0.5, 1000)
         /*firstWrongArp.play();
         firstWrongArp.fade(0, 1, 1000);
         setTimeout(function(){
@@ -200,6 +219,10 @@ Er nahm Jacke, Schal und Aktenkoffer von der Kommode, winkte Rudi zum Abschied z
     }
 
     wrongtitleTwice = () => {
+        this.sounds[6].play();
+        this.sounds[7].play();
+        this.sounds[7].fade(0, 0.7, 1000)
+
         this.titleInput.value = "";
         this.shakeElement(this.titleInput);
         this.titleLabel.innerHTML = "Nein, einen <em style=\"color:red;text-transform:uppercase;\">guten (!)</em> Titel für deinen Text"
@@ -207,8 +230,13 @@ Er nahm Jacke, Schal und Aktenkoffer von der Kommode, winkte Rudi zum Abschied z
     }
 
     wrongtitleThrice = () => {
+        this.sounds[8].play();
+
         this.wrongTitleCounter++;
         setTimeout(() => {
+            for (let i = 0; i <= 7; i++) {
+                this.sounds[i].fade(this.sounds[i].volume(), 0, 3000);
+            }
             this.titleLabel.style.opacity = 0;
             setTimeout(() => {
                 this.titleLabel.style.opacity = 1;
@@ -219,23 +247,33 @@ Er nahm Jacke, Schal und Aktenkoffer von der Kommode, winkte Rudi zum Abschied z
                         let titleInputCurrent = "";
                         let letterCounter = 0;
                         const titleFinal = "LASS MICH DIR HELFEN";
+                        let soundCounter = this.sounds.length-1;
                         let titleInterval = setInterval(() => {
                             titleInputCurrent += titleFinal[letterCounter];
                             letterCounter++;
                             this.titleInput.value = titleInputCurrent;
+
+                            this.sounds[soundCounter].play();
+                            soundCounter--;
+
                             if (letterCounter >= titleFinal.length) {
                                 clearInterval(titleInterval);
                                 this.fillScreenWithText();
                             }
-                        }, 100); //nach debugging auf 500
+                        }, 500); //nach debugging auf 500
                     }, 100);
-                }, 150); // nach debugging auf 1500
-            }, 300); // nach debugging auf 3000
-        }, 200); // nach debugging auf 2000
+                }, 1500); // nach debugging auf 1500
+            }, 3000); // nach debugging auf 3000
+        }, 3000); // nach debugging auf 2000
     }
 
     fillScreenWithText = () => {
         setTimeout(() => {
+
+            this.sounds[9].play();
+            this.sounds[9].fade(0,1,3000)
+            
+
             this.spamCont = document.createElement('canvas');
             this.spamCont.classList.add('spam-container');
             this.spamCont.setAttribute('width', window.innerWidth);
@@ -249,12 +287,12 @@ Er nahm Jacke, Schal und Aktenkoffer von der Kommode, winkte Rudi zum Abschied z
             // this.spamCont.innerHTML += "<span style=\"top:" + (Math.random() * 20) + 20 + "%; left:" + (Math.random() * 20) + 20 + "%; font-size:40px; font-family:\'Oswald\'\">LASS MICH DIR HELFEN</span>";
 
             let screenCleared = false;
-            let intervalAmount = 100; //nach debugging auf 500 setzen
+            let intervalAmount = 500; //nach debugging auf 500 setzen
             let spamCounter = 0;
             this.waitBeforeAddingNextSpan(spamCounter, intervalAmount, screenCleared, ctx);
 
 
-        }, 500); // nach debugging auf 2000 setzen
+        }, 2000); // nach debugging auf 2000 setzen
     }
 
     addSpanToSpamCont = (ctx) => {
@@ -288,14 +326,13 @@ Er nahm Jacke, Schal und Aktenkoffer von der Kommode, winkte Rudi zum Abschied z
 
     setupWritingPhase = () => {
         this.textTitle.style.display = "block";
+        document.getElementById('content-note').style.display = "block";
         setTimeout(() => {
             this.textTitle.style.opacity = 1;
             this.textLabel.style.display = "block";
-            document.body.style.transition = "background-color 1s ease";
-            this.textTitle.style.transition = "color 1s ease";
             setTimeout(() => {
-                document.body.style.backgroundColor = "white";
-                this.textTitle.style.color = "black";
+                const inputWrapper = document.getElementById('input-wrapper');
+                inputWrapper.style.display = "block";
                 this.textLabel.style.top = "30px";
                 this.textLabel.style.opacity = 1;
                 this.textDisplay.style.display = "block";
@@ -358,12 +395,60 @@ Er nahm Jacke, Schal und Aktenkoffer von der Kommode, winkte Rudi zum Abschied z
 
     eingabeVerarbeiten = (event) => { // wird aufgerufen, wenn eine Taste gedrückt wird. abhängig vom keydown event (das argument), welcher den keyCode der gedrückten Taste speichert
         this.textBufferBearbeiten(event);
+        this.textCheckSpecial();
         this.textUpdaten();
     }
 
     /*************************************************************************************************
      ***************************** eingabeVerarbeiten() - HELPERFUNKTIONEN*****************************
      *************************************************************************************************/
+    textCheckSpecial = () => {
+        if (this.displayedCharsCounter > 26 && !this.kontrolleDisplayed) {
+            this.kontrolleDisplayed = true;
+            const contNL = document.getElementById('content-note');
+
+            const newCN = document.createElement('span');
+            newCN.textContent = "Kontrolle";
+            console.log(newCN.textContent)
+            newCN.classList.add('content-note-item');
+            contNL.appendChild(newCN);
+            setTimeout(() => {
+                newCN.style.opacity = "1";
+            }, 20);
+        }
+
+        if (this.displayedCharsCounter > 109 && !this.lightChanged) {
+            this.lightChanged = true;
+            this.changeLight();
+        }
+
+        if (this.displayedCharsCounter > 4605 && !this.bobStirbtDisplayed) {
+            this.bobStirbtDisplayed = true;
+            const contNL = document.getElementById('content-note');
+
+            const newCN = document.createElement('span');
+            newCN.textContent += ", Bob stirbt";
+            newCN.classList.add('content-note-item');
+            contNL.appendChild(newCN);
+            setTimeout(() => {
+                newCN.style.opacity = "1";
+            }, 20);
+        }
+
+        if (this.displayedCharsCounter > 5377 && !this.letzteWarnungDisplayed) {
+            this.letzteWarnungDisplayed = true;
+            const contNL = document.getElementById('content-note');
+
+            const newCN = document.createElement('span');
+            newCN.textContent += ", letzte Warnung";
+            newCN.classList.add('content-note-item');
+            contNL.appendChild(newCN);
+            setTimeout(() => {
+                newCN.style.opacity = "1";
+            }, 20);
+        }
+    }
+
     textBufferBearbeiten = (event) => {
         if (this.tasteIstBackspace(event)) {
             this.textLöschen();
@@ -424,6 +509,19 @@ Er nahm Jacke, Schal und Aktenkoffer von der Kommode, winkte Rudi zum Abschied z
         this.textDisplay.value = this.textDisplayBuffer;
     }
 
+    changeLight = () => {
+        document.body.style.transition = "background-color 3s ease";
+
+
+        document.body.style.backgroundColor = "white";
+
+        const lightChangeText = document.getElementsByClassName('light-change-text');
+        for (let i = 0; i < lightChangeText.length; i++) {
+            lightChangeText[i].style.transition = "color 3s ease";
+            lightChangeText[i].style.color = "black";
+        }
+        
+    }
 
     /*************************************************************************************************
      ************************** eingabeListenerHinzufügen() - HELPERFUNKTIONEN*************************
@@ -432,6 +530,15 @@ Er nahm Jacke, Schal und Aktenkoffer von der Kommode, winkte Rudi zum Abschied z
     addInputListener = () => {
         this.textDisplay.addEventListener('keyup', this.eingabeVerarbeiten); //eingabeVerarbeiten);
         this.titleInput.addEventListener('keypress', this.titleConfirm);
+    }
+
+    addFocusListener = () => {
+        this.textDisplay.addEventListener('focus', this.makeContentNoteLabelAppear);
+    }
+
+    makeContentNoteLabelAppear = () => {
+        const contNL = document.getElementById('content-note');
+        contNL.style.opacity = "1";
     }
 }
 
