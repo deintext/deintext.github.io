@@ -157,6 +157,11 @@ Er nahm Jacke, Schal und Aktenkoffer von der Kommode, winkte Rudi zum Abschied z
             document.body.appendChild(credits);
             document.body.appendChild(creditsName);
 
+            setTimeout(() => {
+                credits.style.opacity = 1;
+                creditsName.style.opacity = 1;
+            }, 20);
+
             this.loadingBarCont.addEventListener("click", this.makeDeinTextAppear);
         }
     }

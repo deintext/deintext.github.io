@@ -367,6 +367,7 @@ textarea {
     text-align: center;
     color: black;
     font-family: "Oswald", sans-serif;
+    opacity: 0;
     font-size: 30px;
     transition: opacity 1s ease;
 }
